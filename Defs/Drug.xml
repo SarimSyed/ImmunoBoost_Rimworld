@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>ImmunoBoost</defName>
+    <label>immunoBoost</label>
+    <description>ImmunoBoost is a medicine that helps strengthen the immune system giving colonist a
+      better fighting chance against infections.</description>
+    <possessionCount>10</possessionCount>
+    <descriptionHyperlinks>
+      <HediffDef>PenoxycylineHigh</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Penoxycyline</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>600</WorkToMake>
+      <MarketValue>18</MarketValue>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+
+      <nurseable>true</nurseable>
+      <outcomeDoers>
+        <li Class="ImmunoBoost.ImmuneSystemBoostDoerClass">
+          <infectionHediff>WoundInfection</infectionHediff>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+
+
+    <recipeMaker>
+      <researchPrerequisite>PenoxycylineProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>2100</displayPriority>
+    </recipeMaker>
+    <costList>
+      <RawFungus>10</RawFungus>
+	  <MedicineHerbal>2</MedicineHerbal>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1001</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+        
+      </li>
+    </comps>
+  </ThingDef>
+
+
+</Defs>
